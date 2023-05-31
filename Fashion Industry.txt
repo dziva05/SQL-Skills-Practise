@@ -1,34 +1,36 @@
---What are the top 5 most reviewed brand, and what is their average rating?
+--- The Fashion Sales Dataset used is a dataset from Keggle that simulates the sales process in the fashion industry. It serves as a valuable resource for gaining insights into the dynamics of the fashion market, allowing businesses to analyse sales trends, forecast demand, and optimize their strategies effectively.
+
+--1. What are the top 5 most reviewed brand, and what is their average rating?
 SELECT Distinct(Brand), AVG(Rating) as AverageRating 
 From Fashion
 Group by Brand
 order by AverageRating desc;
---Is there a correlation between the number of reviews and the overall rating of products?(Pearsons Correlation)
+--2. Is there a correlation between the number of reviews and the overall rating of products?(Pearsons Correlation)
 ---*I used the 'correl' function in Excel  to double check the answer. 
  SELECT (COUNT(*)*sum(reviewcount*rating)-sum(reviewcount)*sum(rating))/ 
  (SQRT(COUNT(*)*SUM(REVIEWCOUNT*REVIEWCOUNT)-(SUM(REVIEWCOUNT)*SUM(REVIEWCOUNT))))/
  (SQRT(COUNT(*)*SUM(Rating*Rating)-(SUM(Rating)*SUM(Rating))))
      as correlation
 FROM Fashion
---How does the availability of different sizes vary across product categories?
+--3. How does the availability of different sizes vary across product categories?
 select distinct(Category), Count(Availablesizes) as NumberofSizes
 From Fashion
 Group by Category
 Order by NumberofSizes desc
---What are the most common colors among the products in each category?
+--4. What are the most common colors among the products in each category?
 SELECT Category, Color
 FROM (SELECT Category, Color,ROW_NUMBER() OVER (PARTITION BY Category ORDER BY COUNT(*) DESC) as Ranking
     FROM Fashion
     GROUP BY Category, Color) t
 WHERE Ranking = 1;
 
---Are there any age groups that are more likely to purchase certain product categories?
+--5.Are there any age groups that are more likely to purchase certain product categories?
 SELECT Age,Category
 FROM (SELECT Age, Category,ROW_NUMBER() OVER (PARTITION BY age ORDER BY COUNT(*) DESC) as Ranking
     FROM Fashion
     GROUP BY Category, Age) t
 WHERE Ranking = 1;
---Do products mentioned in fashion magazines have higher ratings compared to others?
+--6. Do products mentioned in fashion magazines have higher ratings compared to others?
 Select distinct(FashionMagazines), Avg(Rating) AS Ratings 
 From Fashion
 Group by FashionMagazines
