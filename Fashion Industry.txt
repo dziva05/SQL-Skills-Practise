@@ -1,4 +1,5 @@
---- The Fashion Sales Dataset used is a dataset from Keggle that simulates the sales process in the fashion industry. It serves as a valuable resource for gaining insights into the dynamics of the fashion market, allowing businesses to analyse sales trends, forecast demand, and optimize their strategies effectively.
+--The Fashion Sales Dataset used is a dataset from Keggle that simulates the sales process in the fashion industry. 
+--It serves as a valuable resource for gaining insights into the dynamics of the fashion market, allowing businesses to analyse sales trends, forecast demand, and optimize their strategies effectively.
 
 --1. What are the top 5 most reviewed brand, and what is their average rating?
 SELECT Distinct(Brand), AVG(Rating) as AverageRating 
