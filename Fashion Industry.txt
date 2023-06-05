@@ -36,8 +36,12 @@ Select distinct(FashionMagazines), Avg(Rating) AS Ratings
 From Fashion
 Group by FashionMagazines
 Order by  Ratings desc
-
-
+--7. Are products promoted by influencers more likely to receive positive customer reviews?
+Select count (CustomerReviews) as NumberofReviews , FashionInfluencers, 
+sum(case when CustomerReviews = 'positive' then 1 else 0 end) as PositiveReviews
+From  Fashion
+Group by FashionInfluencers
+Order by PositiveReviews desc
 
 
 
