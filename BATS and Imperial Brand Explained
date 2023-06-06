@@ -1,0 +1,24 @@
+1. Average, Min, and Max Share Price for BATS and IMB
+The first set of queries retrieve the maximum, minimum, and average price for shares in the BATS and IMB tables. 
+The results provide an overview of share price distribution within these entities. 
+This analysis could be useful in tracking the historical performance of these stocks and identifying periods of significant fluctuation or stability.
+
+2. Daily Returns for BATS and IMB
+These queries calculate the daily return for each stock by comparing each day's price to the previous day's price. 
+The daily return can give an idea of the short-term volatility of a stock. 
+By comparing daily returns, one can assess the relative risk and return potential of different stocks.
+
+3. Average Stock Prices for BATS and Imperial Brands Over a Certain Time Period
+The average stock price over a defined period (from 2018-05-26 to 2023-05-26 in this case) for BATS and IMB is calculated. 
+Averaging the stock prices over this period can give an overall understanding of the stock's performance and can be compared to other metrics like the industry average to evaluate the company's relative standing.
+
+4. Comparison of Stock Prices of BATS and Imperial Brands to the FTSE All-Share Tobacco Index
+This query combines the share price data of BATS and IMB with the FTSE All-Share Tobacco index for the same dates.
+This comparison allows one to understand how closely these stocks follow the broader industry trend, which could provide insights into their market correlation and potential factors influencing their performance.
+
+5. Days Where BATS and Imperial Brands Outperformed the FTSE All-Share Tobacco Index
+The final query aims to identify the days where the daily returns of BATS and IMB stocks outperformed the FTSE All-Share Tobacco Index's daily returns. 
+The result can give a measure of these stocks' performance relative to the overall market, indicating their strength or resilience in various market conditions.
+
+In summary, these queries provide a comprehensive view of the historical performance and relative standing of BATS and Imperial Brands stocks. 
+Such insights can aid investors and financial analysts in making informed decisions about their portfolios, considering factors like historical volatility, average returns, and market correlation.
